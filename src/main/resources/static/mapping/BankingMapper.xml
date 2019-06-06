@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigrabbit.qinghua_school.dao.BankingMapper">
+  <resultMap id="BaseResultMap" type="com.bigrabbit.qinghua_school.entity.Banking">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="bname" jdbcType="VARCHAR" property="bname" />
+    <result column="bcase" jdbcType="VARCHAR" property="bcase" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bigrabbit.qinghua_school.entity.Banking">
+    <result column="bdesc" jdbcType="LONGVARCHAR" property="bdesc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    bid, bname, bcase
+  </sql>
+  <sql id="Blob_Column_List">
+    bdesc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_banking
+    where bid = #{bid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_banking
+    where bid = #{bid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bigrabbit.qinghua_school.entity.Banking">
+    insert into t_banking (bid, bname, bcase, 
+      bdesc)
+    values (#{bid,jdbcType=INTEGER}, #{bname,jdbcType=VARCHAR}, #{bcase,jdbcType=VARCHAR}, 
+      #{bdesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bigrabbit.qinghua_school.entity.Banking">
+    insert into t_banking
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="bname != null">
+        bname,
+      </if>
+      <if test="bcase != null">
+        bcase,
+      </if>
+      <if test="bdesc != null">
+        bdesc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="bname != null">
+        #{bname,jdbcType=VARCHAR},
+      </if>
+      <if test="bcase != null">
+        #{bcase,jdbcType=VARCHAR},
+      </if>
+      <if test="bdesc != null">
+        #{bdesc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bigrabbit.qinghua_school.entity.Banking">
+    update t_banking
+    <set>
+      <if test="bname != null">
+        bname = #{bname,jdbcType=VARCHAR},
+      </if>
+      <if test="bcase != null">
+        bcase = #{bcase,jdbcType=VARCHAR},
+      </if>
+      <if test="bdesc != null">
+        bdesc = #{bdesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where bid = #{bid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bigrabbit.qinghua_school.entity.Banking">
+    update t_banking
+    set bname = #{bname,jdbcType=VARCHAR},
+      bcase = #{bcase,jdbcType=VARCHAR},
+      bdesc = #{bdesc,jdbcType=LONGVARCHAR}
+    where bid = #{bid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bigrabbit.qinghua_school.entity.Banking">
+    update t_banking
+    set bname = #{bname,jdbcType=VARCHAR},
+      bcase = #{bcase,jdbcType=VARCHAR}
+    where bid = #{bid,jdbcType=INTEGER}
+  </update>
+</mapper>

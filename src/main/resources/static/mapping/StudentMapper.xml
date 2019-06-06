@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigrabbit.qinghua_school.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.bigrabbit.qinghua_school.entity.Student">
+    <id column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="companyname" jdbcType="VARCHAR" property="companyname" />
+    <result column="companyrole" jdbcType="VARCHAR" property="companyrole" />
+    <result column="like" jdbcType="VARCHAR" property="like" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    sid, sname, phone, companyname, companyrole, like, message
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_student
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_student
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bigrabbit.qinghua_school.entity.Student">
+    insert into t_student (sid, sname, phone, 
+      companyname, companyrole, like, 
+      message)
+    values (#{sid,jdbcType=INTEGER}, #{sname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{companyname,jdbcType=VARCHAR}, #{companyrole,jdbcType=VARCHAR}, #{like,jdbcType=VARCHAR}, 
+      #{message,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bigrabbit.qinghua_school.entity.Student">
+    insert into t_student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="sname != null">
+        sname,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="companyname != null">
+        companyname,
+      </if>
+      <if test="companyrole != null">
+        companyrole,
+      </if>
+      <if test="like != null">
+        like,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="companyname != null">
+        #{companyname,jdbcType=VARCHAR},
+      </if>
+      <if test="companyrole != null">
+        #{companyrole,jdbcType=VARCHAR},
+      </if>
+      <if test="like != null">
+        #{like,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bigrabbit.qinghua_school.entity.Student">
+    update t_student
+    <set>
+      <if test="sname != null">
+        sname = #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="companyname != null">
+        companyname = #{companyname,jdbcType=VARCHAR},
+      </if>
+      <if test="companyrole != null">
+        companyrole = #{companyrole,jdbcType=VARCHAR},
+      </if>
+      <if test="like != null">
+        like = #{like,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bigrabbit.qinghua_school.entity.Student">
+    update t_student
+    set sname = #{sname,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      companyname = #{companyname,jdbcType=VARCHAR},
+      companyrole = #{companyrole,jdbcType=VARCHAR},
+      like = #{like,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR}
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+</mapper>
