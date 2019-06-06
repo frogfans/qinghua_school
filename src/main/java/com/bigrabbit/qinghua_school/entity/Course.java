@@ -10,9 +10,9 @@ public class Course {
 
     private Integer hour;
 
-    private String desc;
+    private String cdesc;
 
-    private Integer did;
+    private Integer mid;
 
 
 }
