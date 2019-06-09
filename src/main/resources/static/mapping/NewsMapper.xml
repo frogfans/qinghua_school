@@ -79,4 +79,24 @@
       url = #{url,jdbcType=VARCHAR}
     where nid = #{nid,jdbcType=INTEGER}
   </update>
+
+  <select id="findIndexAndSize" parameterType="map" resultType="com.bigrabbit.qinghua_school.entity.News">
+    SELECT s.title,s.time from t_menu m
+    INNER JOIN t_newstype_news n
+    ON m.mid = n.mid
+    inner JOIN t_news s
+    on s.nid = n.nid
+    where m.mid = #{mid}
+    LIMIT #{index},#{size}
+  </select>
+
+  <select id="count" parameterType="int" resultType="int">
+    SELECT COUNT(*) from t_menu m
+    INNER JOIN t_newstype_news n
+    ON m.mid = n.mid
+    inner JOIN t_news s
+    on s.nid = n.nid
+    where m.mid = #{mid}
+  </select>
+
 </mapper>
