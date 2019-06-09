@@ -92,4 +92,10 @@
       bcase = #{bcase,jdbcType=VARCHAR}
     where bid = #{bid,jdbcType=INTEGER}
   </update>
+
+    <select id="findAll" resultType="com.bigrabbit.qinghua_school.entity.Banking">
+        select * from t_banking
+    </select>
+
+
 </mapper>
