@@ -14,4 +14,6 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+
+    public void AddStudent(Student student);
 }

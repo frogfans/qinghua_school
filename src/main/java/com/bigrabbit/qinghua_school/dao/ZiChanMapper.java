@@ -2,6 +2,8 @@ package com.bigrabbit.qinghua_school.dao;
 
 import com.bigrabbit.qinghua_school.entity.ZiChan;
 
+import java.util.List;
+
 public interface ZiChanMapper {
     int deleteByPrimaryKey(Integer zid);
 
@@ -16,4 +18,6 @@ public interface ZiChanMapper {
     int updateByPrimaryKeyWithBLOBs(ZiChan record);
 
     int updateByPrimaryKey(ZiChan record);
+
+    public List<ZiChan> findAll();
 }

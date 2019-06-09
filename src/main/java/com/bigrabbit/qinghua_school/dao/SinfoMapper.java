@@ -2,6 +2,8 @@ package com.bigrabbit.qinghua_school.dao;
 
 import com.bigrabbit.qinghua_school.entity.Sinfo;
 
+import java.util.List;
+
 public interface SinfoMapper {
     int deleteByPrimaryKey(Integer infoid);
 
@@ -14,4 +16,6 @@ public interface SinfoMapper {
     int updateByPrimaryKeySelective(Sinfo record);
 
     int updateByPrimaryKey(Sinfo record);
+
+    public List<Sinfo> selectByInfoid(int infoid);
 }

@@ -2,6 +2,8 @@ package com.bigrabbit.qinghua_school.dao;
 
 import com.bigrabbit.qinghua_school.entity.Science;
 
+import java.util.List;
+
 public interface ScienceMapper {
     int deleteByPrimaryKey(Integer sid);
 
@@ -14,4 +16,6 @@ public interface ScienceMapper {
     int updateByPrimaryKeySelective(Science record);
 
     int updateByPrimaryKey(Science record);
+
+    public List<Science> selectBySid(int mid);
 }

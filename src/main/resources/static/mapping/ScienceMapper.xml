@@ -55,4 +55,15 @@
     set sname = #{sname,jdbcType=VARCHAR}
     where sid = #{sid,jdbcType=INTEGER}
   </update>
+
+  <select id="selectBySid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      select sc.sid,sc.sname,si.infotitle,si.infodesc
+      from t_science sc
+      INNER JOIN t_sinfo si
+      ON sc.sid=si.sid
+      where sid=#{sid}
+
+
+  </select>
+
 </mapper>

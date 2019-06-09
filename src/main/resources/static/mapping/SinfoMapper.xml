@@ -79,4 +79,12 @@
       sid = #{sid,jdbcType=INTEGER}
     where infoid = #{infoid,jdbcType=INTEGER}
   </update>
+
+    <select id="selectByInfoid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_sinfo
+        where infoid=#{infoid}
+    </select>
+
 </mapper>

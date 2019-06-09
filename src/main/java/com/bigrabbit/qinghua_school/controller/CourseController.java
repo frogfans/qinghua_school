@@ -21,6 +21,7 @@ public class CourseController {
     @ApiOperation(value = "查询课程",notes = "这是一个实现查询2级菜单对应的所有课程的方法，需要参数信息")
     @GetMapping("/findByMid.do")
     public R findCourseByMid(int mid){
+
         return R.setOK("OK", courseService.findCourseByMid(mid));
     }
 }
