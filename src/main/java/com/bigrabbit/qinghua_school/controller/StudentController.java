@@ -21,6 +21,7 @@ public class StudentController {
     @ApiOperation(value = "添加学生",notes = "这是一个添加学生的操作")
     @GetMapping("/addStudent.do")
     public R addStudent(Student student) {
+        studentService.addStudent(student);
         return R.setOK();
     }
 

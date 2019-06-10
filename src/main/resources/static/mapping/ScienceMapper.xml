@@ -56,11 +56,12 @@
     where sid = #{sid,jdbcType=INTEGER}
   </update>
 
-  <select id="selectBySid" resultMap="BaseResultMap">
-      /*select * from t_science*/
+  <select id="selectBySid" parameterType="java.lang.Integer" resultType="com.bigrabbit.qinghua_school.vo.ScienceVo">
+     /*/select * from t_science*/
       select *
       from t_science sc
       INNER JOIN t_sinfo si
       on sc.sid=si.sid
+      where sc.sid=#{sid}
   </select>
 </mapper>

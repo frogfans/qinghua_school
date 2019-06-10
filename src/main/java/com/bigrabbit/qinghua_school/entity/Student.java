@@ -14,7 +14,7 @@ public class Student {
 
     private String companyrole;
 
-    private String like;
+    private String slike;
 
     private String message;
 

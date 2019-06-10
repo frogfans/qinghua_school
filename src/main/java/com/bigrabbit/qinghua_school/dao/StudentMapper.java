@@ -16,5 +16,5 @@ public interface StudentMapper {
 
     int updateByPrimaryKey(Student record);
 
-    public void AddStudent(Student student);
+    public void addStudent(Student student);
 }

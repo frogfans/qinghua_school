@@ -14,7 +14,8 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper studentDao;
 
     @Override
-    public void AddStudent(Student student) {
-        studentDao.AddStudent(student);
+    public void addStudent(Student student) {
+
+        studentDao.addStudent(student);
     }
 }

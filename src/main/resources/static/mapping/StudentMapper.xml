@@ -115,13 +115,9 @@
     where sid = #{sid,jdbcType=INTEGER}
   </update>
 
-  <insert id="AddStudent" parameterType="com.bigrabbit.qinghua_school.entity.Student">
-      insert into t_student (sname, phone,
-      companyname, companyrole, like,
-      message)
-    values (sname=#{sname}, phone=#{phone},
-            companyname=#{companyname}, companyrole=#{companyrole},
-            like=#{like}, message=#{message})
+  <insert id="addStudent" parameterType="com.bigrabbit.qinghua_school.entity.Student">
+      insert into t_student(sname,phone,companyname,companyrole,slike,message)
+      values(#{sname},#{phone},#{companyname},#{companyrole},#{slike},#{message})
   </insert>
 
 </mapper>

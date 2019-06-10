@@ -4,5 +4,5 @@ import com.bigrabbit.qinghua_school.entity.Student;
 
 public interface StudentService {
 
-    public void AddStudent(Student student);
+    public void addStudent(Student student);
 }

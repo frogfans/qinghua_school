@@ -1,6 +1,5 @@
 package com.bigrabbit.qinghua_school.controller;
 
-import com.bigrabbit.qinghua_school.entity.ZiChan;
 import com.bigrabbit.qinghua_school.service.ZiChanService;
 import com.bigrabbit.qinghua_school.vo.R;
 import io.swagger.annotations.Api;
@@ -21,9 +20,9 @@ public class ZiChanController {
     @CrossOrigin
     @ApiOperation(value = "查询所有产业",notes = "这是一个实现查询全部产业的方法")
     @GetMapping("/list.do")
-    public R list() {
-        List<ZiChan> list = ziChanService.findAllZiChan();
-        return R.setOK("OK",list);
+    public R findAll() {
+
+        return R.setOK("OK",ziChanService.findAllZiChan());
 
     }
 }

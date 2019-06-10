@@ -94,7 +94,7 @@
   </update>
 
 
-  <select id="findAll" resultMap="BaseResultMap">
+  <select id="findAll" resultType="com.bigrabbit.qinghua_school.entity.ZiChan">
     select * from t_zichan
   </select>
 
