@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @Api(value = "科研平台操作", tags = "科研平台操作")
 @RestController
 @RequestMapping("/science")
@@ -30,6 +31,7 @@ public class ScienceController {
     @ApiOperation(value = "查询科研",notes = "这个是根据id编号查询出科研平台中的二级菜单信息")
     @GetMapping("/findSinfoByInfoid.do")
     public R findSinfoByInfoid(int infoid){
+
         return R.setOK("OK",scienceService.findSinfoByInfoid(infoid));
     }
 }

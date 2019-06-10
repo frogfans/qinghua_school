@@ -1,14 +1,14 @@
 package com.bigrabbit.qinghua_school.controller;
 
+import com.bigrabbit.qinghua_school.entity.ZiChan;
 import com.bigrabbit.qinghua_school.service.ZiChanService;
 import com.bigrabbit.qinghua_school.vo.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Api(value = "产业平台操作",tags = "产业平台操作")
 @RestController
@@ -20,10 +20,10 @@ public class ZiChanController {
 
     @CrossOrigin
     @ApiOperation(value = "查询所有产业",notes = "这是一个实现查询全部产业的方法")
-    @RequestMapping("/all.do")
-    @ResponseBody
-    public R all() {
-        return R.setOK("OK", ziChanService.findAllZiChan());
+    @GetMapping("/list.do")
+    public R list() {
+        List<ZiChan> list = ziChanService.findAllZiChan();
+        return R.setOK("OK",list);
 
     }
 }

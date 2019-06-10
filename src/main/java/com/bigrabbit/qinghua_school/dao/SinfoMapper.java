@@ -5,6 +5,7 @@ import com.bigrabbit.qinghua_school.entity.Sinfo;
 import java.util.List;
 
 public interface SinfoMapper {
+
     int deleteByPrimaryKey(Integer infoid);
 
     int insert(Sinfo record);

@@ -5,6 +5,7 @@ import com.bigrabbit.qinghua_school.entity.ZiChan;
 import java.util.List;
 
 public interface ZiChanMapper {
+
     int deleteByPrimaryKey(Integer zid);
 
     int insert(ZiChan record);

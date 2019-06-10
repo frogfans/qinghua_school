@@ -93,10 +93,9 @@
     where zid = #{zid,jdbcType=INTEGER}
   </update>
 
+
   <select id="findAll" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from t_zichan
+    select * from t_zichan
   </select>
 
 </mapper>

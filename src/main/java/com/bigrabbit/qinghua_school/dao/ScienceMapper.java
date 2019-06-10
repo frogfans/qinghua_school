@@ -1,10 +1,12 @@
 package com.bigrabbit.qinghua_school.dao;
 
 import com.bigrabbit.qinghua_school.entity.Science;
+import com.bigrabbit.qinghua_school.vo.ScienceVo;
 
 import java.util.List;
 
 public interface ScienceMapper {
+
     int deleteByPrimaryKey(Integer sid);
 
     int insert(Science record);
@@ -17,5 +19,5 @@ public interface ScienceMapper {
 
     int updateByPrimaryKey(Science record);
 
-    public List<Science> selectBySid(int mid);
+    public List<ScienceVo> selectBySid(int sid);
 }

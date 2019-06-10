@@ -116,10 +116,10 @@
   </update>
 
   <insert id="AddStudent" parameterType="com.bigrabbit.qinghua_school.entity.Student">
-      insert into t_student (sid, sname, phone,
+      insert into t_student (sname, phone,
       companyname, companyrole, like,
       message)
-    values (sid=#{sid}, sname=#{sname}, phone=#{phone},
+    values (sname=#{sname}, phone=#{phone},
             companyname=#{companyname}, companyrole=#{companyrole},
             like=#{like}, message=#{message})
   </insert>

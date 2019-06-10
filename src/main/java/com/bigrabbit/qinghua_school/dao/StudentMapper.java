@@ -3,6 +3,7 @@ package com.bigrabbit.qinghua_school.dao;
 import com.bigrabbit.qinghua_school.entity.Student;
 
 public interface StudentMapper {
+
     int deleteByPrimaryKey(Integer sid);
 
     int insert(Student record);

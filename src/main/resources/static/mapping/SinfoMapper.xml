@@ -72,6 +72,7 @@
     </set>
     where infoid = #{infoid,jdbcType=INTEGER}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.bigrabbit.qinghua_school.entity.Sinfo">
     update t_sinfo
     set infotitle = #{infotitle,jdbcType=VARCHAR},

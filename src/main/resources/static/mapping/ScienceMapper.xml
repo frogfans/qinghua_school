@@ -56,14 +56,11 @@
     where sid = #{sid,jdbcType=INTEGER}
   </update>
 
-  <select id="selectBySid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-      select sc.sid,sc.sname,si.infotitle,si.infodesc
+  <select id="selectBySid" resultMap="BaseResultMap">
+      /*select * from t_science*/
+      select *
       from t_science sc
       INNER JOIN t_sinfo si
-      ON sc.sid=si.sid
-      where sid=#{sid}
-
-
+      on sc.sid=si.sid
   </select>
-
 </mapper>
