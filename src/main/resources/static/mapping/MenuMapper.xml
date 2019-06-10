@@ -90,4 +90,11 @@
       url = #{url,jdbcType=VARCHAR}
     where mid = #{mid,jdbcType=INTEGER}
   </update>
+    
+    <select id="findAll" resultType="com.bigrabbit.qinghua_school.vo.VMenu">
+      SELECT e.mid,e.mname,e.mlevel,s.mname parentname from t_menu e
+      INNER JOIN t_menu s
+      on s.pid = e.mid
+    </select>
+    
 </mapper>

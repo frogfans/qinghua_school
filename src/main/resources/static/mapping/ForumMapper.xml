@@ -4,11 +4,11 @@
   <resultMap id="BaseResultMap" type="com.bigrabbit.qinghua_school.entity.Forum">
     <id column="fid" jdbcType="INTEGER" property="fid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="time" jdbcType="DATE" property="time" />
+    <result column="fdesc" jdbcType="VARCHAR" property="fdesc" />
     <result column="img" jdbcType="VARCHAR" property="img" />
   </resultMap>
   <sql id="Base_Column_List">
-    fid, title, time, img
+    fid, title, fdesc, img
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,7 +23,7 @@
   <insert id="insert" parameterType="com.bigrabbit.qinghua_school.entity.Forum">
     insert into t_forum (fid, title, time, 
       img)
-    values (#{fid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{time,jdbcType=DATE}, 
+    values (#{fid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{fdesc,jdbcType=VARCHAR},
       #{img,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bigrabbit.qinghua_school.entity.Forum">
@@ -35,8 +35,8 @@
       <if test="title != null">
         title,
       </if>
-      <if test="time != null">
-        time,
+      <if test="fdesc != null">
+        fdesc,
       </if>
       <if test="img != null">
         img,
@@ -50,7 +50,7 @@
         #{title,jdbcType=VARCHAR},
       </if>
       <if test="time != null">
-        #{time,jdbcType=DATE},
+        #{fdesc,jdbcType=VARCHAR},
       </if>
       <if test="img != null">
         #{img,jdbcType=VARCHAR},
@@ -63,8 +63,8 @@
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="time != null">
-        time = #{time,jdbcType=DATE},
+      <if test="fdesc != null">
+        time = #{fdesc,jdbcType=VARCHAR},
       </if>
       <if test="img != null">
         img = #{img,jdbcType=VARCHAR},
@@ -75,8 +75,13 @@
   <update id="updateByPrimaryKey" parameterType="com.bigrabbit.qinghua_school.entity.Forum">
     update t_forum
     set title = #{title,jdbcType=VARCHAR},
-      time = #{time,jdbcType=DATE},
+      fdesc = #{fdesc,jdbcType=VARCHAR},
       img = #{img,jdbcType=VARCHAR}
     where fid = #{fid,jdbcType=INTEGER}
   </update>
+  
+  <select id="findAll" resultType="com.bigrabbit.qinghua_school.entity.Forum">
+    SELECT * from t_forum
+  </select>
+  
 </mapper>

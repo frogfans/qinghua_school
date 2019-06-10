@@ -2,6 +2,8 @@ package com.bigrabbit.qinghua_school.dao;
 
 import com.bigrabbit.qinghua_school.entity.Forum;
 
+import java.util.List;
+
 public interface ForumMapper {
     int deleteByPrimaryKey(Integer fid);
 
@@ -14,4 +16,6 @@ public interface ForumMapper {
     int updateByPrimaryKeySelective(Forum record);
 
     int updateByPrimaryKey(Forum record);
+
+    public List<Forum> findAll();
 }
