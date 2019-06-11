@@ -21,8 +21,8 @@ public class StudentController {
     @ApiOperation(value = "添加学生",notes = "这是一个添加学生的操作")
     @GetMapping("/addStudent.do")
     public R addStudent(Student student) {
-        studentService.addStudent(student);
-        return R.setOK();
+        studentService.addStudent(student); // 因为调用的方法时void，没有返回的参数，所以直接调用
+        return R.setOK(); //  直接返回OK就行
     }
 
 }

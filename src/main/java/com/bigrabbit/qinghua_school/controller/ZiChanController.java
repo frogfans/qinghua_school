@@ -17,7 +17,7 @@ public class ZiChanController {
     @Autowired(required = false)
     private ZiChanService ziChanService;
 
-    @CrossOrigin
+    @CrossOrigin // 跨域
     @ApiOperation(value = "查询所有产业",notes = "这是一个实现查询全部产业的方法")
     @GetMapping("/list.do")
     public R findAll() {

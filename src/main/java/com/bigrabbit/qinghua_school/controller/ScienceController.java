@@ -19,7 +19,7 @@ public class ScienceController {
     @Autowired
     private ScienceService scienceService;
 
-    @CrossOrigin
+    @CrossOrigin // 跨域
     @ApiOperation(value = "查询科研", notes = "这个是根据一级菜单编号查询信息从而查询出二级菜单信息")
     @GetMapping("/findScienceBySid.do")
     public R findScienceBySid(int sid) {
@@ -27,7 +27,7 @@ public class ScienceController {
         return R.setOK("OK", scienceService.findScienceBySid(sid));
     }
 
-    @CrossOrigin
+    @CrossOrigin // 跨域
     @ApiOperation(value = "查询科研",notes = "这个是根据id编号查询出科研平台中的二级菜单信息")
     @GetMapping("/findSinfoByInfoid.do")
     public R findSinfoByInfoid(int infoid){
