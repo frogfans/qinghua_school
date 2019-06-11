@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CourseService {
     public List<Course> findCourseByMid(int mid);
+    public List<Course> findCourseByPage();
 }

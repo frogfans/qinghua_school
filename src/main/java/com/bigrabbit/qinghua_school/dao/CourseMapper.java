@@ -18,4 +18,6 @@ public interface CourseMapper {
     int updateByPrimaryKey(Course record);
 
     public List<Course> selectByMid(int mid);
+
+    public List<Course> selectAll();
 }

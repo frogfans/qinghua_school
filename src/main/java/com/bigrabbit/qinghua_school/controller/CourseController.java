@@ -24,4 +24,10 @@ public class CourseController {
 
         return R.setOK("OK", courseService.findCourseByMid(mid));
     }
+    @CrossOrigin//允许跨域
+    @ApiOperation(value = "查询前6个课程",notes = "这是一个实现查询前6条数据的方法")
+    @GetMapping("/findByPage.do")
+    public R findCourseByPage(){
+        return R.setOK("OK", courseService.findCourseByPage());
+    }
 }

@@ -12,7 +12,7 @@
     cid, cname, hour, cdesc, mid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_course
     where cid = #{cid,jdbcType=INTEGER}
@@ -99,4 +99,11 @@
     where mid = #{mid}
   </select>
 
+
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_course
+  </select>
 </mapper>

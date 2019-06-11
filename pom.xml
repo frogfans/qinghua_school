@@ -53,6 +53,14 @@
             <version>1.16.10</version>
         </dependency>
 
+        <!-- pagehelper插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+
+
         <!--Swagger 在线接口文档-->
         <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
         <dependency>
